@@ -4,7 +4,7 @@
 
 
 var question = []
-for (var i=0; i<100; i++) {
+for (var i=0; i<50; i++) {
     question[i] = {
         Question: "Question" + i,
         AnswerA: "Answer A",
