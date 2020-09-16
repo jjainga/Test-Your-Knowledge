@@ -50,6 +50,9 @@ function changeQuestion(event) {
         score = "Score: " + totalScore;
         document.querySelector("#topScore").textContent = score;
     }
+    else if(userAnswer === "Start Quiz") {
+
+    }
     else {
         totalScore = totalScore - 10;
         score = "Score: " + totalScore;
@@ -93,8 +96,16 @@ function changeQuestion(event) {
     console.log(totalScore);
  
 }
+//Unhide Figure to allow quiz to start
+function unhide() {
+
+    figure.style.display = "Block";
+
+}
 //Create Eventlisteners for each function the user is inteaded to call 
-start.addEventListener("click",countDown);
+start.addEventListener("click", countDown);
+start.addEventListener("click", unhide);
+start.addEventListener("click", changeQuestion);
 // myAnswer.addEventListener("click", changeQuestion)
 userAnswerA.addEventListener("mousedown", changeQuestion);
 userAnswerB.addEventListener("mousedown", changeQuestion);

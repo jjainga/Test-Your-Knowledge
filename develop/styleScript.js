@@ -128,7 +128,7 @@ section3.style.textAlign = "center";
 
 
 //figure
-figure.style.display = "block";
+figure.style.display = "none";
 figure.style.margin = "auto";
 figure.style.width = "95%";
 figure.style.overflow = "auto";
