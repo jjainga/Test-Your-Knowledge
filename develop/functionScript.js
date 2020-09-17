@@ -172,11 +172,16 @@ start.addEventListener("click", changeQuestion);
 //Submit button
 form.addEventListener("submit", function(event) {
     event.preventDefault();
+    if(recordName.value === " ") {
+
+    }
+    else {
     usersScore.Name = recordName.value;
     usersScore.Score = totalScore;
     leaderBoardUsers.push(usersScore);
     localStorage.setItem("Record", JSON.stringify(leaderBoardUsers));
-})
+    recordName.value = " ";
+}})
 // myAnswer.addEventListener("click", changeQuestion)
 // if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
 userAnswerA.addEventListener("click", scoring);
