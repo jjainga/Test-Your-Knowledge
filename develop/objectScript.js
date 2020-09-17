@@ -250,12 +250,6 @@ question[39].AnswerB = "";
 question[39].AnswerC = "";
 question[39].AnswerD = "";
 //
-question[40].Question = "Take the derivative of 7x^7= ?";
-question[40].AnswerA = "49x^6";
-question[40].AnswerB = "";
-question[40].AnswerC = "";
-question[40].AnswerD = "";
-//
 
 
 
