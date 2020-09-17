@@ -181,74 +181,74 @@ question[26].AnswerD = "7x^4 - 4x^3 -x";
 question[27].Question = "Take the derivative of -2x^7 = ?";
 question[27].AnswerA = "-14x^6";
 question[27].AnswerB = "-5";
-question[27].AnswerC = "";
-question[27].AnswerD = "";
+question[27].AnswerC = "x^6";
+question[27].AnswerD = "-x^6";
 //
 question[28].Question = "Take the derivative of 3x^4 = ?";
 question[28].AnswerA = "12x^3";
-question[28].AnswerB = "";
-question[28].AnswerC = "";
-question[28].AnswerD = "";
+question[28].AnswerB = "7x^3";
+question[28].AnswerC = "3x^4";
+question[28].AnswerD = "43x^3";
 //
 question[29].Question = "Take the derivative of -8x^6 = ?";
 question[29].AnswerA = "-48x^5";
-question[29].AnswerB = "";
-question[29].AnswerC = "";
-question[29].AnswerD = "";
+question[29].AnswerB = "-6x^6";
+question[29].AnswerC = "2x^5";
+question[29].AnswerD = "8x^5";
 //
 question[30].Question = "Take the derivative of 5x^2 = ?";
 question[30].AnswerA = "10x";
-question[30].AnswerB = "";
-question[30].AnswerC = "";
-question[30].AnswerD = "";
+question[30].AnswerB = "25x";
+question[30].AnswerC = "10x^2";
+question[30].AnswerD = "25x^2";
 //
 question[31].Question = "3 * 7 = ?";
 question[31].AnswerA = "21";
-question[31].AnswerB = "";
-question[31].AnswerC = "";
-question[31].AnswerD = "";
+question[31].AnswerB = "7";
+question[31].AnswerC = "10";
+question[31].AnswerD = "12";
 //
 question[32].Question = "2x - 7 = 29";
 question[32].AnswerA = "6";
-question[32].AnswerB = "";
-question[32].AnswerC = "";
-question[32].AnswerD = "";
+question[32].AnswerB = "3";
+question[32].AnswerC = "12";
+question[32].AnswerD = "1";
 //
 question[33].Question = "4x + 5 = 37";
 question[33].AnswerA = "8";
-question[33].AnswerB = "";
-question[33].AnswerC = "";
-question[33].AnswerD = "";
+question[33].AnswerB = "7";
+question[33].AnswerC = "1";
+question[33].AnswerD = "0";
 //
 question[34].Question = "3x = 2x + 8";
 question[34].AnswerA = "8";
-question[34].AnswerB = "";
-question[34].AnswerC = "";
-question[34].AnswerD = "";
+question[34].AnswerB = "9";
+question[34].AnswerC = "42";
+question[34].AnswerD = "4";
 //
 question[35].Question = "5x - 4 = 3x + 10";
 question[35].AnswerA = "7";
-question[35].AnswerB = "";
-question[35].AnswerC = "";
-question[35].AnswerD = "";
+question[35].AnswerB = "3";
+question[35].AnswerC = "5";
+question[35].AnswerD = "10";
 //
 question[37].Question = "4x = 36 - 2x";
 question[37].AnswerA = "6";
-question[37].AnswerB = "";
-question[37].AnswerC = "";
-question[37].AnswerD = "";
+question[37].AnswerB = "7";
+question[37].AnswerC = "12";
+question[37].AnswerD = "9";
 //
 question[38].Question = "1 + 1 = ?";
 question[38].AnswerA = "2";
 question[38].AnswerB = "11";
-question[38].AnswerC = "";
-question[38].AnswerD = "";
+question[38].AnswerC = "3";
+question[38].AnswerD = "0";
 //
 question[39].Question = "Take the derivative of 3x^5 = ?";
 question[39].AnswerA = "15x^4";
-question[39].AnswerB = "";
-question[39].AnswerC = "";
-question[39].AnswerD = "";
+question[39].AnswerB = "16x^3";
+question[39].AnswerC = "8x^2";
+question[39].AnswerD = "8x^4";
 //
 
 
