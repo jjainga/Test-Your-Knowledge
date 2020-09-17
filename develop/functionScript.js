@@ -151,8 +151,8 @@ function unhide() {
 //TODO://Get local Storage
 getLeaderboard();
 function getLeaderboard(){
-    var lbData = JSON.parse(localStorage.getItem("Record"))
-    leaderBoardUsers = lbData
+    leaderBoardUsers = JSON.parse(localStorage.getItem("Record"))
+    
     console.log(leaderBoardUsers);
 
 }
