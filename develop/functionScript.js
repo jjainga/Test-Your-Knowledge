@@ -9,6 +9,12 @@ var totalScore = 0;
 var timeLeft = " ";
 var quizQuestions = [];
 
+var leaderBoardUsers = []
+var usersScore = {
+    Name: " ",
+    Score: " "
+}
+
 //TODO://Create loop to push questions to quizQuestions
 for (var i = 0; i < 16; i++) {
     var questionList = question[Math.floor(Math.random()*question.length)];
@@ -26,12 +32,13 @@ function countDown (event) {
     var timeInterval = setInterval(function() {
         timer.textContent = timeLeft + " seconds";
         timeLeft--;
-        
-        if(timeLeft === 0) {
+        if (quizQuestions.lenght < 1) {
+            clearInterval(timeInterval);
+        }
+        else if(timeLeft === 0) {
             timer.textContent = "Complete!!";
             figure.style.display = "none";
             form.style.display = "block";
-            event.preventDefault(); 
             result.textContent = "Your Score is: " + totalScore;
             h3EL.textContent = "Finished!"
             clearInterval(timeInterval);
@@ -126,21 +133,42 @@ function changeQuestion(event) {
     if (quizQuestions.length < 1) {
     figure.style.display = "none";
     form.style.display = "block";
-    event.preventDefault(); 
     result.textContent = "Your Score is: " + totalScore;
     h3EL.textContent = "Finished!"
-
-}
- 
-}
+}}
 //Unhide Figure to allow quiz to start
 function unhide() {
     figure.style.display = "block";
+}
+//TODO://Get local Storage
+getLeaderboard();
+function getLeaderboard(){
+    var lbData = JSON.parse(localStorage.getItem("Record"))
+    leaderBoardUsers = lbData
+    console.log(leaderBoardUsers);
+
+}
+printLeaderboard();
+function printLeaderboard() {
+    leaderBoardUsers.sort((a,b) => b.Score - a.Score);
+    for(var i = 0; i < leaderBoardUsers.length; i++) {
+        var list = document.createElement("li")
+        list.textContent = leaderBoardUsers[i].Score + " " + leaderBoardUsers[i].Name;
+        lbList.appendChild(list);
+    }
 }
 //Create Eventlisteners for each function the user is inteaded to call 
 start.addEventListener("click", countDown);
 start.addEventListener("click", unhide);
 start.addEventListener("click", changeQuestion);
+//Submit button
+form.addEventListener("submit", function(event) {
+    event.preventDefault();
+    usersScore.Name = recordName.value;
+    usersScore.Score = totalScore;
+    leaderBoardUsers.push(usersScore);
+    localStorage.setItem("Record", JSON.stringify(leaderBoardUsers));
+})
 // myAnswer.addEventListener("click", changeQuestion)
 if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
 userAnswerA.addEventListener("click", changeQuestion);

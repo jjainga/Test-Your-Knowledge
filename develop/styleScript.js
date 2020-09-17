@@ -38,6 +38,7 @@ var form = document.createElement("form");
 var result = document.createElement("div");
 var recordName = document.createElement("input");
 var resultInfo = document.createElement("small");
+var section4 = document.createElement("section");
 var leaderboard = document.createElement("div");
 var h2EL = document.createElement("h2");
 var lbList = document.createElement("ol");
@@ -49,7 +50,8 @@ main.className = "container";
 main.className = "text-center";
 section1.className = "row";
 section2.className = "row";
-section3.classname = "row";
+section3.className = "row";
+section4.className = "row";
 //section3.className = "text-center";
 figure.className = "row";
 //div1.className = "col-md-2";
@@ -142,8 +144,15 @@ section3.style.textAlign = "center";
 // startGap.style.width = "15%";
 // startbtnLoction.style.width = "70%";
 // timerloction.style.width = "15%";
+//Section4
+section4.style.display = "block";
+section4.style.margin = "auto";
+section4.style.width = "40%"
+h2EL.style.display = "block";
+lbList.style.display = "block";
 recordName.style.width = "40%";
 recordName.style.margin = "auto";
+
 
 
 
@@ -217,9 +226,9 @@ timer.style.padding = "5px";
 topscore.style.float = "left";
 
 //TODO://Create text for each element
-main.textContent = "Let's take a quiz!";
-h1EL.textContent = "Hello";
-h3EL.textContent = "Hello again";
+main.textContent = "1 minute to see how many you can get right!";
+h1EL.textContent = "Math Quiz!";
+h3EL.textContent = "How much do you know?!";
 div7.textContent = "Answer A";
 div8.textContent = "Answer B";
 div9.textContent = "Answer C";
@@ -228,6 +237,7 @@ start.textContent = "Start Quiz";
 restart.textContent = "Restart";
 timer.textContent = "Countdown!";
 topscore.textContent = "Score:---";
+h2EL.textContent = "Top Scores!"
 
 
 
@@ -243,7 +253,8 @@ section2.appendChild(form);
 form.appendChild(result);
 form.appendChild(recordName);
 form.appendChild(resultInfo);
-body.appendChild(section3);
+main.appendChild(section3);
+main.appendChild(section4);
 // figure.appendChild(div1);
 // figure.appendChild(divGap);
 figure.appendChild(div2);
@@ -267,3 +278,6 @@ section3.appendChild(start);
 section3.appendChild(restart);
 section3.appendChild(timer);
 section3.appendChild(topscore);
+section4.appendChild(h2EL);
+section4.appendChild(leaderboard);
+leaderboard.appendChild(lbList);
