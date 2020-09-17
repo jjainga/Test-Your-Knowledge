@@ -9,7 +9,7 @@ var totalScore = 0;
 var timeLeft = " ";
 var quizQuestions = [];
 
-var leaderBoardUsers = []
+var leaderBoardUsers = [{Name: " ", Score: " "}]
 var usersScore = {
     Name: " ",
     Score: " "
@@ -17,8 +17,8 @@ var usersScore = {
 lbstartingPoint();
 //pushing one value to localstorage
 function lbstartingPoint() {
-    usersScore.Name = " ";
-    usersScore.Score = " ";
+    usersScore.Name = "first";
+    usersScore.Score = "2 ";
     leaderBoardUsers.push(usersScore);
 }
 
