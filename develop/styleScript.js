@@ -28,11 +28,20 @@ var div8 = document.createElement("div");
 var div9 = document.createElement("div");
 var div10 = document.createElement("div");
 var start = document.createElement("button");
+var restart = document.createElement("button");
 var startGap = document.createElement("div");
 var startbtnLoction = document.createElement("div");
 var timerloction = document.createElement("div");
 var timer = document.createElement("span");
 var topscore = document.createElement("span")
+var form = document.createElement("form");
+var result = document.createElement("div");
+var recordName = document.createElement("input");
+var resultInfo = document.createElement("small");
+var leaderboard = document.createElement("div");
+var h2EL = document.createElement("h2");
+var lbList = document.createElement("ol");
+
 
 
 //TODO://Create classes for each element
@@ -63,9 +72,14 @@ div9.className = "answerBtn";
 div10.className = "row";
 div10.className = "answerBtn";
 start.className = "start "
+restart.className = "restart";
 startGap.class = "col-md";
 startbtnLoction.className = "col-md-12";
 timerloction.className = "col-md";
+form.className = "form-group"
+result.className = "result";
+recordName.className = "form-control text-center";
+resultInfo.className = "form-text text-muted";
 
 //TODO://Set IDs for each element
 
@@ -74,6 +88,8 @@ section1.id = "section1";
 section2.id = "section2";
 section3.id = "section3";
 figure.id = "figure";
+form.id = "form";
+recordName.id = "record";
 // div1.id ="div1";
 div2.id ="div2";
 // divGap.id ="Gap";
@@ -92,6 +108,7 @@ div10.id ="AnswerD";
 h1EL.id = "h1id";
 h3EL.id = "currentQuestion";
 start.id = "startbtn";
+restart.id = "restartbtn";
 timer.id = "timer";
 topscore.id = "topScore";
 
@@ -125,6 +142,9 @@ section3.style.textAlign = "center";
 // startGap.style.width = "15%";
 // startbtnLoction.style.width = "70%";
 // timerloction.style.width = "15%";
+recordName.style.width = "40%";
+recordName.style.margin = "auto";
+
 
 
 //figure
@@ -174,11 +194,20 @@ div10.style.margin = "10px";
 div10.style.padding = "10px";
 div10.style.textAlign = "center";
 div10.style.border = "1px solid black";
+//Form style
+form.style.display = "none";
+//textbox
+recordName.style.display = "Block";
 //Start button style
-start.style.display = "inline -block";
+start.style.display = "inline-block";
 start.style.padding = "5px 15px";
 start.style.margin = "10px";
 start.style.float = "center";
+//Restart button style
+restart.style.display = "none";
+restart.style.padding = "5px 15px";
+restart.style.margin = "10px";
+restart.style.float = "center";
 //timer style
 timer.style.display = "inline-block"
 timer.style.float = "right";
@@ -196,8 +225,9 @@ div8.textContent = "Answer B";
 div9.textContent = "Answer C";
 div10.textContent = "Answer D";
 start.textContent = "Start Quiz";
-timer.textContent = "Countdown!"
-topscore.textContent = "Score:---"
+restart.textContent = "Restart";
+timer.textContent = "Countdown!";
+topscore.textContent = "Score:---";
 
 
 
@@ -209,6 +239,10 @@ main.appendChild(section2);
 section1.appendChild(h1EL);
 section2.appendChild(h3EL);
 section2.appendChild(figure);
+section2.appendChild(form);
+form.appendChild(result);
+form.appendChild(recordName);
+form.appendChild(resultInfo);
 body.appendChild(section3);
 // figure.appendChild(div1);
 // figure.appendChild(divGap);
@@ -230,30 +264,6 @@ div2.appendChild(div10);
 // section3.appendChild(timerloction);
 // startbtnLoction.appendChild(start);
 section3.appendChild(start);
+section3.appendChild(restart);
 section3.appendChild(timer);
 section3.appendChild(topscore);
-
-
-
-
-// TODO://Create a timer that starts to count down after a start button is pressed
-
-// TODO://Create timer, needs to restart and not go passed 0
-
-// TODO://Create button that starts timer and begins quiz
-
-// TODO://Create questions that have a multiple choice for the answer and that changes after each answer is confirmed
-
-// TODO://Scores user by remaining seconds left after answering each question
-
-// TODO:
-
-// TODO:
-
-// TODO:
-
-// TODO:
-
-// TODO:
-
-// TODO:

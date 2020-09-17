@@ -4,32 +4,60 @@ var userAnswerB = document.querySelector("#AnswerB");
 var userAnswerC = document.querySelector("#AnswerC");
 var userAnswerD = document.querySelector("#AnswerD");
 // var myAnswer = document.querySelector(".answerBtn")
-var score = document.querySelector("#topScore").textContent;
+var score = document.querySelector("#topScore");
 var totalScore = 0;
+var timeLeft = " ";
+var quizQuestions = [];
+
+//TODO://Create loop to push questions to quizQuestions
+for (var i = 0; i < 16; i++) {
+    var questionList = question[Math.floor(Math.random()*question.length)];
+    question.splice(questionList, 1);
+    quizQuestions.push(questionList);
+}
+console.log(quizQuestions.length);
+
 
 //TODO:timer, onclick will start to count down
 
-function countDown () {
+function countDown (event) {
     var timeLeft = 60
 
     var timeInterval = setInterval(function() {
         timer.textContent = timeLeft + " seconds";
         timeLeft--;
-    
+        
         if(timeLeft === 0) {
             timer.textContent = "Complete!!";
+            figure.style.display = "none";
+            form.style.display = "block";
+            event.preventDefault(); 
+            result.textContent = "Your Score is: " + totalScore;
+            h3EL.textContent = "Finished!"
             clearInterval(timeInterval);
         }}, 1000)
 
         start.style.display = "none";
+        restart.style.display = "inline-block"
 }
+
+//TODO: Create Restart function for when the user wants to start the quiz over
+function restartQuiz () {
+    location.reload();
+}
+
+//TODO: Create When timer ends score is shown and textbox for recording username is show
+
 
 //TODO:Create function that will let the use click each answer and move to the next question
 
-function changeQuestion(event) {    
+function changeQuestion(event) {  
     //Randomizing the question after each click
-    var selectedQuestion = question[Math.floor(Math.random()*question.length)];
-    var currentQuestion = selectedQuestion.Question;
+    var selectedQuestion = quizQuestions[Math.floor(Math.random()*quizQuestions.length)];
+    quizQuestions.splice(selectedQuestion, 1);
+        console.log(quizQuestions);
+        console.log(quizQuestions.length);
+    var currentQuestion = selectedQuestion.quizQuestions;
     //Randomizing answers from each quesiton
     var answerArr = [];
     answerArr.push(selectedQuestion.AnswerA);
@@ -50,7 +78,7 @@ function changeQuestion(event) {
         score = "Score: " + totalScore;
         document.querySelector("#topScore").textContent = score;
     }
-    else if(userAnswer === "Start Quiz") {
+    else if (userAnswer === "Start Quiz") {
 
     }
     else {
@@ -94,20 +122,32 @@ function changeQuestion(event) {
     console.log("-----------------------")
     console.log(score);
     console.log(totalScore);
+    //TODO:// Create form after completing quiz
+    if (quizQuestions.length < 1) {
+    figure.style.display = "none";
+    form.style.display = "block";
+    event.preventDefault(); 
+    result.textContent = "Your Score is: " + totalScore;
+    h3EL.textContent = "Finished!"
+
+}
  
 }
 //Unhide Figure to allow quiz to start
 function unhide() {
-
-    figure.style.display = "Block";
-
+    figure.style.display = "block";
 }
 //Create Eventlisteners for each function the user is inteaded to call 
 start.addEventListener("click", countDown);
 start.addEventListener("click", unhide);
 start.addEventListener("click", changeQuestion);
 // myAnswer.addEventListener("click", changeQuestion)
-userAnswerA.addEventListener("mousedown", changeQuestion);
-userAnswerB.addEventListener("mousedown", changeQuestion);
-userAnswerC.addEventListener("mousedown", changeQuestion);
-userAnswerD.addEventListener("mousedown", changeQuestion);
+if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
+userAnswerA.addEventListener("click", changeQuestion);
+userAnswerB.addEventListener("click", changeQuestion);
+userAnswerC.addEventListener("click", changeQuestion);
+userAnswerD.addEventListener("click", changeQuestion);
+}
+if(restart) {
+    restart.addEventListener("click", restartQuiz)
+}
