@@ -133,7 +133,7 @@ question[18].AnswerD = "100";
 question[19].Question = "23 - (11 - 4) = ?";
 question[19].AnswerA = "16";
 question[19].AnswerB = "8";
-question[19].AnswerC = "16";
+question[19].AnswerC = "17";
 question[19].AnswerD = "4";
 //
 question[20].Question = "8 - (12 + 11) = ?";

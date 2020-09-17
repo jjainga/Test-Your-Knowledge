@@ -24,7 +24,7 @@ function lbstartingPoint() {
 
 
 //TODO://Create loop to push questions to quizQuestions
-for (var i = 0; i < 16; i++) {
+for (var i = 0; i < 25; i++) {
     var questionList = question[Math.floor(Math.random()*question.length)];
     question.splice(questionList, 1);
     quizQuestions.push(questionList);
