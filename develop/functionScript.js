@@ -158,7 +158,7 @@ function getLeaderboard(){
 
 printLeaderboard();
 function printLeaderboard() {
-    if(leaderboardUsers.length === 0 ) {
+    if(leaderBoardUsers.length === 0 ) {
 
     }
     else { 
