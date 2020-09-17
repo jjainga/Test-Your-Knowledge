@@ -3,7 +3,7 @@ var userAnswerA = document.querySelector("#AnswerA");
 var userAnswerB = document.querySelector("#AnswerB");
 var userAnswerC = document.querySelector("#AnswerC");
 var userAnswerD = document.querySelector("#AnswerD");
-// var myAnswer = document.querySelector(".answerBtn")
+var correctAnswer = " ";
 var score = document.querySelector("#topScore");
 var totalScore = 0;
 var timeLeft = " ";
@@ -14,6 +14,7 @@ var usersScore = {
     Name: " ",
     Score: " "
 }
+
 
 //TODO://Create loop to push questions to quizQuestions
 for (var i = 0; i < 16; i++) {
@@ -52,19 +53,35 @@ function countDown (event) {
 function restartQuiz () {
     location.reload();
 }
+//Scoreing
+function scoring(event) {
+// user answer
+    var userAnswer = event.target.textContent;
+    console.log(userAnswer);
+  //Create scoring variable
+  if(userAnswer == correctAnswer) {
+    totalScore = totalScore + 10;
+    score = "Score: " + totalScore;
+    document.querySelector("#topScore").textContent = score;
+    }
+    else if (userAnswer === "Start Quiz") {
 
-//TODO: Create When timer ends score is shown and textbox for recording username is show
+    }
+    else {
+    totalScore = totalScore - 10;
+    score = "Score: " + totalScore;
+    document.querySelector("#topScore").textContent = score;
+}}
 
-
-//TODO:Create function that will let the use click each answer and move to the next question
-
+//Click Event Funciton
 function changeQuestion(event) {  
     //Randomizing the question after each click
     var selectedQuestion = quizQuestions[Math.floor(Math.random()*quizQuestions.length)];
     quizQuestions.splice(selectedQuestion, 1);
         console.log(quizQuestions);
         console.log(quizQuestions.length);
-    var currentQuestion = selectedQuestion.quizQuestions;
+    currentQuestion = selectedQuestion.Question;
+    h3EL.textContent = currentQuestion
     //Randomizing answers from each quesiton
     var answerArr = [];
     answerArr.push(selectedQuestion.AnswerA);
@@ -76,23 +93,6 @@ function changeQuestion(event) {
     //Set index for correct question
     correctAnswer = answerArr[0];
     console.log(correctAnswer);
-    // user answer
-    var userAnswer = event.target.textContent;
-    console.log(userAnswer);
-    //Create scoring variable
-    if(userAnswer == correctAnswer) {
-        totalScore = totalScore + 10;
-        score = "Score: " + totalScore;
-        document.querySelector("#topScore").textContent = score;
-    }
-    else if (userAnswer === "Start Quiz") {
-
-    }
-    else {
-        totalScore = totalScore - 10;
-        score = "Score: " + totalScore;
-        document.querySelector("#topScore").textContent = score;
-    }
     //Setting an answer for A, B, C, D after each click
     var randomNumber = Math.floor(Math.random()*answerArr.length);
     var selectedAnswerA = answerArr[randomNumber];
@@ -170,12 +170,16 @@ form.addEventListener("submit", function(event) {
     localStorage.setItem("Record", JSON.stringify(leaderBoardUsers));
 })
 // myAnswer.addEventListener("click", changeQuestion)
-if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
+// if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
+userAnswerA.addEventListener("click", scoring);
+userAnswerB.addEventListener("click", scoring);
+userAnswerC.addEventListener("click", scoring);
+userAnswerD.addEventListener("click", scoring);    
 userAnswerA.addEventListener("click", changeQuestion);
 userAnswerB.addEventListener("click", changeQuestion);
 userAnswerC.addEventListener("click", changeQuestion);
 userAnswerD.addEventListener("click", changeQuestion);
-}
+// }
 if(restart) {
     restart.addEventListener("click", restartQuiz)
 }
