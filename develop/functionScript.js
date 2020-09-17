@@ -40,7 +40,7 @@ function countDown (event) {
     var timeInterval = setInterval(function() {
         timer.textContent = timeLeft + " seconds";
         timeLeft--;
-        if (quizQuestions.lenght < 1) {
+        if (quizQuestions.length < 1) {
             clearInterval(timeInterval);
         }
         else if(timeLeft === 0) {
@@ -158,7 +158,7 @@ function getLeaderboard(){
 
 printLeaderboard();
 function printLeaderboard() {
-    if(leaderBoardUsers.length === 0 ) {
+    if(leaderBoardUsers.length < 1 ) {
 
     }
     else { 
