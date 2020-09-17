@@ -156,7 +156,7 @@ function getLeaderboard(){
 
 }
 
-printLeaderboard();
+
 function printLeaderboard() {
     if(leaderBoardUsers && leaderBoardUsers.length === 0 ) {
 
@@ -184,6 +184,7 @@ form.addEventListener("submit", function(event) {
     usersScore.Score = totalScore;
     leaderBoardUsers.push(usersScore);
     localStorage.setItem("Record", JSON.stringify(leaderBoardUsers));
+    printLeaderboard();
     recordName.value = " ";
 }})
 // myAnswer.addEventListener("click", changeQuestion)
