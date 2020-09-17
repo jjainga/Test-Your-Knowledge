@@ -14,6 +14,13 @@ var usersScore = {
     Name: " ",
     Score: " "
 }
+lbstartingPoint();
+//pushing one value to localstorage
+function lbstartingPoint() {
+    usersScore.Name = " ";
+    usersScore.Score = " ";
+    leaderBoardUsers.push(usersScore);
+}
 
 
 //TODO://Create loop to push questions to quizQuestions
@@ -148,6 +155,7 @@ function getLeaderboard(){
     console.log(leaderBoardUsers);
 
 }
+
 printLeaderboard();
 function printLeaderboard() {
     leaderBoardUsers.sort((a,b) => b.Score - a.Score);
