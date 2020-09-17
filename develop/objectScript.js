@@ -232,23 +232,23 @@ question[35].AnswerB = "3";
 question[35].AnswerC = "5";
 question[35].AnswerD = "10";
 //
-question[37].Question = "4x = 36 - 2x";
-question[37].AnswerA = "6";
-question[37].AnswerB = "7";
-question[37].AnswerC = "12";
-question[37].AnswerD = "9";
+question[36].Question = "4x = 36 - 2x";
+question[36].AnswerA = "6";
+question[36].AnswerB = "7";
+question[36].AnswerC = "12";
+question[36].AnswerD = "9";
 //
-question[38].Question = "1 + 1 = ?";
-question[38].AnswerA = "2";
-question[38].AnswerB = "11";
-question[38].AnswerC = "3";
-question[38].AnswerD = "0";
+question[37].Question = "1 + 1 = ?";
+question[37].AnswerA = "2";
+question[37].AnswerB = "11";
+question[37].AnswerC = "3";
+question[37].AnswerD = "0";
 //
-question[39].Question = "Take the derivative of 3x^5 = ?";
-question[39].AnswerA = "15x^4";
-question[39].AnswerB = "16x^3";
-question[39].AnswerC = "8x^2";
-question[39].AnswerD = "8x^4";
+question[38].Question = "Take the derivative of 3x^5 = ?";
+question[38].AnswerA = "15x^4";
+question[38].AnswerB = "16x^3";
+question[38].AnswerC = "8x^2";
+question[38].AnswerD = "8x^4";
 //
 
 
