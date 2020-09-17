@@ -158,12 +158,16 @@ function getLeaderboard(){
 
 printLeaderboard();
 function printLeaderboard() {
-    leaderBoardUsers.sort((a,b) => b.Score - a.Score);
-    for(var i = 0; i < leaderBoardUsers.length; i++) {
+    if(leaderboardUsers.length === 0 ) {
+
+    }
+    else { 
+        leaderBoardUsers.sort((a,b) => b.Score - a.Score);
+        for(var i = 0; i < leaderBoardUsers.length; i++) {
         var list = document.createElement("li")
         list.textContent = leaderBoardUsers[i].Score + " " + leaderBoardUsers[i].Name;
         lbList.appendChild(list);
-    }
+    }}
 }
 //Create Eventlisteners for each function the user is inteaded to call 
 start.addEventListener("click", countDown);
