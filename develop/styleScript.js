@@ -82,6 +82,7 @@ form.className = "form-group"
 result.className = "result";
 recordName.className = "form-control text-center";
 resultInfo.className = "form-text text-muted";
+lbList.className = "text-center";
 
 //TODO://Set IDs for each element
 
@@ -150,6 +151,7 @@ section4.style.margin = "auto";
 section4.style.width = "40%"
 h2EL.style.display = "block";
 lbList.style.display = "block";
+lbList.style.margin = "auto";
 recordName.style.width = "40%";
 recordName.style.margin = "auto";
 
