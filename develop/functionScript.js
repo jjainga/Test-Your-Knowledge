@@ -9,20 +9,17 @@ var totalScore = 0;
 var timeLeft = " ";
 var quizQuestions = [];
 
-var leaderBoardUsers = [{Name: " ", Score: " "}]
+if(JSON.parse(localStorage.getItem("Record"))=== null ) {
+    console.log("bye")
+    var leaderBoardUsers = [];
+}else {
+    console.log("felica")
+    var leaderBoardUsers = JSON.parse(localStorage.getItem("Record"));
+};
 var usersScore = {
     Name: " ",
     Score: " "
 }
-lbstartingPoint();
-//pushing one value to localstorage
-function lbstartingPoint() {
-    usersScore.Name = "first";
-    usersScore.Score = "2 ";
-    leaderBoardUsers.push(usersScore);
-    localStorage.setItem("Record", leaderBoardUsers);
-}
-
 
 //TODO://Create loop to push questions to quizQuestions
 for (var i = 0; i < 30; i++) {
@@ -59,6 +56,7 @@ function countDown (event) {
 
 //TODO: Create Restart function for when the user wants to start the quiz over
 function restartQuiz () {
+
     location.reload();
 }
 //Scoreing
@@ -148,26 +146,22 @@ function changeQuestion(event) {
 function unhide() {
     figure.style.display = "block";
 }
-//TODO://Get local Storage
-getLeaderboard();
-function getLeaderboard(){
-    leaderBoardUsers = JSON.parse(localStorage.getItem("Record"))
-    
-    console.log(leaderBoardUsers);
-
-}
 
 //Printing leaderboard below
-printLeaderboard();
-function printLeaderboard() {
-        leaderBoardUsers.sort((a,b) => b.Score - a.Score);
-        for(var i = 0; i < leaderBoardUsers.length; i++) {
-        var list = document.createElement("li")
-        list.textContent = leaderBoardUsers[i].Score + " " + leaderBoardUsers[i].Name;
-        lbList.appendChild(list);
-    }
+if(leaderBoardUsers === null) {
+    console.log("no leaderboard")
+} else{
+     printLeaderboard(leaderBoardUsers);
 }
-//Create Eventlisteners for each function the user is inteaded to call 
+    function printLeaderboard(arr) {
+        arr.sort((a,b) => b.Score - a.Score);
+        for(var i = 0; i < arr.length; i++) {
+            var list = document.createElement("li")
+            list.textContent = arr[i].Score + " " + arr[i].Name;
+            lbList.appendChild(list);
+        }
+    }
+        //Create Eventlisteners for each function the user is inteaded to call 
 start.addEventListener("click", countDown);
 start.addEventListener("click", unhide);
 start.addEventListener("click", changeQuestion);
@@ -175,19 +169,22 @@ start.addEventListener("click", changeQuestion);
 form.addEventListener("submit", function(event) {
     event.preventDefault();
     if(recordName.value === " ") {
-
+        
     }
     else {
-    usersScore.Name = recordName.value;
+        usersScore.Name = recordName.value;
     usersScore.Score = totalScore;
+    console.log(usersScore)
+    console.log(leaderBoardUsers)
     leaderBoardUsers.push(usersScore);
+    
     localStorage.setItem("Record", JSON.stringify(leaderBoardUsers));
     recordName.value = " ";
 }})
 // myAnswer.addEventListener("click", changeQuestion)
 // if(userAnswerA || userAnswerB || userAnswerC || userAnswerD) {
-userAnswerA.addEventListener("click", scoring);
-userAnswerB.addEventListener("click", scoring);
+    userAnswerA.addEventListener("click", scoring);
+    userAnswerB.addEventListener("click", scoring);
 userAnswerC.addEventListener("click", scoring);
 userAnswerD.addEventListener("click", scoring);    
 userAnswerA.addEventListener("click", changeQuestion);
